@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PULSE DANCE LAB — Студия современной хореографии</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">
+      <span></span> Pulse Dance
+    </div>
+    <nav>
+      <a href="#styles">Направления</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#instructors">Хореографы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <button class="btn btn-neon" onclick="openModal('Пробное занятие')">Записаться</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">⚡ Открыт новый танцевальный сезон 2026</div>
+    <h1>Почувствуй <br><span class="gradient-text">ритм и свободу</span></h1>
+    <p>Прокачай технику, пластику и уверенность в себе в атмосфере неонового драйва. Твой танец начинается здесь.</p>
+    <div class="hero-actions">
+      <button class="btn btn-neon" onclick="openModal('Первое бесплатное занятие')">Записаться на пробное</button>
+      <a href="#schedule" class="btn btn-outline">Смотреть расписание</a>
+    </div>
+
+    <div class="floating-stats">
+      <div>
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Направлений</div>
+      </div>
+      <div>
+        <div class="stat-num">24</div>
+        <div class="stat-label">Топ-хореографа</div>
+      </div>
+      <div>
+        <div class="stat-num">1 800+</div>
+        <div class="stat-label">Учеников</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Неоновых зала</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dance Styles -->
+  <section id="styles">
+    <div class="section-header">
+      <span class="section-subtitle">Styles & Energy</span>
+      <h2 class="section-title">Направления танцев</h2>
+    </div>
+
+    <div class="styles-grid">
+      <div class="style-card" style="--card-glow: var(--neon-pink)">
+        <span class="style-tag">STREET CULTURE</span>
+        <h3>High Heels</h3>
+        <p>Грация, смелость, взрывная хореография на каблуках. Раскрой женственность и магнетизм через четкие и плавные линии.</p>
+        <div class="style-meta">
+          <span>Интенсивность: 🔥🔥🔥</span>
+          <span>Все уровни</span>
+        </div>
+      </div>
+
+      <div class="style-card" style="--card-glow: var(--neon-cyan)">
+        <span class="style-tag">URBAN GROOVE</span>
+        <h3>Hip-Hop Choreo</h3>
+        <p>Кач, изоляция, работа с битом и взрывной грув. Изучаем актуальные тренды мировых фестивалей и клипов.</p>
+        <div class="style-meta">
+          <span>Интенсивность: 🔥🔥🔥🔥</span>
+          <span>Начинающие / Pro</span>
+        </div>
+      </div>
+
+      <div class="style-card" style="--card-glow: var(--neon-purple)">
+        <span class="style-tag">CLUB & GLAM</span>
+        <h3>Vogue & Femme</h3>
+        <p>Позирование, модельные проходки, руки, дропы и спины. Погрузись в эстетику балов и уверенного артистизма.</p>
+        <div class="style-meta">
+          <span>Интенсивность: 🔥🔥🔥</span>
+          <span>Все уровни</span>
+        </div>
+      </div>
+
+      <div class="style-card" style="--card-glow: var(--neon-lime)">
+        <span class="style-tag">EMOTION & FLOW</span>
+        <h3>Contemporary</h3>
+        <p>Свобода движений, партерная техника, баланс тела и глубокая чувственность в каждом дыхании.</p>
+        <div class="style-meta">
+          <span>Интенсивность: 🔥</span>
+          <span>Легкий уровень</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <div class="section-header">
+      <span class="section-subtitle">Timetable</span>
+      <h2 class="section-title">Расписание тренировок</h2>
+    </div>
+
+    <div class="schedule-controls">
+      <button class="day-tab active" onclick="filterSchedule('today', this)">Сегодня</button>
+      <button class="day-tab" onclick="filterSchedule('mon', this)">Понедельник</button>
+      <button class="day-tab" onclick="filterSchedule('wed', this)">Среда</button>
+      <button class="day-tab" onclick="filterSchedule('fri', this)">Пятница</button>
+      <button class="day-tab" onclick="filterSchedule('sat', this)">Суббота</button>
+    </div>
+
+    <div class="schedule-table-wrap">
+      <div class="schedule-row">
+        <div class="time-slot">18:00 – 19:30</div>
+        <div>
+          <div class="class-title">High Heels (Base)</div>
+          <div class="class-trainer">Зал NEON • Алиса Романова</div>
+        </div>
+        <div><span class="class-level">Для новичков</span></div>
+        <div style="color: #00ff88; font-size: 0.9rem;">● Свободно 4 места</div>
+        <button class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="openModal('High Heels 18:00')">Записаться</button>
+      </div>
+
+      <div class="schedule-row">
+        <div class="time-slot">19:30 – 21:00</div>
+        <div>
+          <div class="class-title">Hip-Hop Choreo</div>
+          <div class="class-trainer">Зал CYBER • Марк «Vortex»</div>
+        </div>
+        <div><span class="class-level">Средний уровень</span></div>
+        <div style="color: #00ff88; font-size: 0.9rem;">● Свободно 2 места</div>
+        <button class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="openModal('Hip-Hop 19:30')">Записаться</button>
+      </div>
+
+      <div class="schedule-row">
+        <div class="time-slot">20:00 – 21:30</div>
+        <div>
+          <div class="class-title">Vogue Femme</div>
+          <div class="class-trainer">Зал GLOW • Кристина Скай</div>
+        </div>
+        <div><span class="class-level">Все уровни</span></div>
+        <div style="color: #ff007f; font-size: 0.9rem;">● Осталось 1 место</div>
+        <button class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="openModal('Vogue Femme 20:00')">Записаться</button>
+      </div>
+
+      <div class="schedule-row">
+        <div class="time-slot">21:00 – 22:30</div>
+        <div>
+          <div class="class-title">Contemporary Flow</div>
+          <div class="class-trainer">Зал ZENITH • Даниил Ветров</div>
+        </div>
+        <div><span class="class-level">Продвинутый</span></div>
+        <div style="color: #00ff88; font-size: 0.9rem;">● Свободно 5 мест</div>
+        <button class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="openModal('Contemporary 21:00')">Записаться</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors -->
+  <section id="instructors">
+    <div class="section-header">
+      <span class="section-subtitle">Masters of Movement</span>
+      <h2 class="section-title">Наши хореографы</h2>
+    </div>
+
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <div class="trainer-avatar">
+          <img src="img/alisa.jpg" alt="Алиса Романова — хореограф студии">
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-role">High Heels & Jazz Funk</div>
+          <div class="trainer-name">Алиса Романова</div>
+          <p class="trainer-exp">Опыт 9 лет. Победительница Frame Up Fest, работала в шоу-балетах топовых артистов.</p>
+        </div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="trainer-avatar">
+          <img src="img/mark.jpg" alt="Марк «Vortex» — хореограф студии">
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-role">Hip-Hop & Urban</div>
+          <div class="trainer-name">Марк «Vortex»</div>
+          <p class="trainer-exp">Опыт 11 лет. Финалист мировых баттлов SDK Europe и Juste Debout. Ставит мощную музыкальность.</p>
+        </div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="trainer-avatar">
+          <img src="img/kristina.jpg" alt="Кристина Скай — хореограф студии">
+        </div>
+        <div class="trainer-info">
+          <div class="trainer-role">Vogue & Runway</div>
+          <div class="trainer-name">Кристина Скай</div>
+          <p class="trainer-exp">Мать восточноевропейского бального дома. Судья международных Vogue Balls, эксперт по подиумной подаче.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="section-header">
+      <span class="section-subtitle">Membership</span>
+      <h2 class="section-title">Прайс и абонементы</h2>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-title">Пробный старт</div>
+        <div class="price-amount">800 ₽ <span>/ 1 класс</span></div>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Любое направление на выбор
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Знакомство с куратором
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Бесплатный шкафчик и вода
+          </li>
+        </ul>
+        <button class="btn btn-outline" onclick="openModal('Абонемент: Пробный старт')">Выбрать тариф</button>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-badge">ХИТ СЕЗОНА</div>
+        <div class="price-title">PRO Pass (8 занятий)</div>
+        <div class="price-amount">6 200 ₽ <span>/ месяц</span></div>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            8 занятий в месяц (любые стили)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Участие в съемках видеоклипов
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Заморозка до 7 дней
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Скидка 15% на мастер-классы звезд
+          </li>
+        </ul>
+        <button class="btn btn-neon" onclick="openModal('Абонемент: PRO Pass')">Купить абонемент</button>
+      </div>
+
+      <div class="price-card">
+        <div class="price-title">Unlimited VIP</div>
+        <div class="price-amount">11 500 ₽ <span>/ месяц</span></div>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Безлимитный доступ ко всем группам
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Самостоятельные тренировки в залах
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Бесплатный вход на джемы и баттлы
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Персональный шкафчик
+          </li>
+        </ul>
+        <button class="btn btn-outline" onclick="openModal('Абонемент: Unlimited VIP')">Выбрать тариф</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="section-header">
+      <span class="section-subtitle">Community Feedback</span>
+      <h2 class="section-title">Что говорят ученики</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Пришла сюда с нулевым уровнем на High Heels. Сначала было страшно, но атмосфера просто пушка! Неоновый свет, звук, поддержка тренера Алисы — за 3 месяца научилась уверенно танцевать и чувствовать себя богиней!»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">ЕС</div>
+          <div>
+            <div class="reviewer-name">Елена Смирнова</div>
+            <div class="reviewer-meta">Студентка курса Heels</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Очень крутая площадка и профессиональное сообщество. Марк на Hip-Hop раскладывает каждое движение до мелочей, музыкальность прокачивается моментально. Залы чистые, звук сочный!»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">АК</div>
+          <div>
+            <div class="reviewer-name">Артем Ковалев</div>
+            <div class="reviewer-meta">Студент курса Hip-Hop Choreo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Съемки профессиональных видосов в конце месяца в неоновых декорациях — это отдельный кайф! Контент в соцсетях просто взорвался. Спасибо Pulse Dance за вдохновение!»</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">МД</div>
+          <div>
+            <div class="reviewer-name">Мария Данилова</div>
+            <div class="reviewer-meta">Студентка курса Vogue</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section>
+    <div class="cta-box">
+      <h2>Готов(а) ворваться на танцпол?</h2>
+      <p>Запишись на первое пробное занятие со скидкой 50% и начни раскрывать свой потенциал уже сегодня.</p>
+      <button class="btn btn-neon" style="padding: 1rem 2.5rem; font-size: 1.1rem;" onclick="openModal('Главный CTA')">Забронировать место в группе</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 PULSE DANCE LAB. Все права защищены. Атмосфера, ритм и свобода движения.</p>
+  </footer>
+
+  <!-- Modal Booking -->
+  <div class="modal-overlay" id="bookingModal" onclick="closeModalOnBg(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Запись на тренировку</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem;" id="modalSubtitle">Оставьте контактные данные, и администратор свяжется с вами.</p>
+      <form class="modal-form" onsubmit="handleFormSubmit(event)">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="tel" placeholder="+7 (___) ___-__-__" required>
+        <select required>
+          <option value="" disabled selected>Выберите направление</option>
+          <option value="heels">High Heels</option>
+          <option value="hiphop">Hip-Hop Choreo</option>
+          <option value="vogue">Vogue & Femme</option>
+          <option value="contemporary">Contemporary</option>
+        </select>
+        <button type="submit" class="btn btn-neon" style="width: 100%; margin-top: 0.5rem;">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
